@@ -185,7 +185,8 @@ public class OrderService : IOrderService
         order.UpdatedAt = DateTime.UtcNow;
         await _context.SaveChangesAsync();
 
-        var cancelEvent = new OrderCancelledEvent(orderId, userId, order.UserEmail, reason, DateTime.UtcNow);
+        var itemEvents = order.Items.Select(i => new OrderItemEvent(i.ProductId, i.ProductName, i.Quantity, i.UnitPrice)).ToList();
+        var cancelEvent = new OrderCancelledEvent(orderId, userId, order.UserEmail, reason, itemEvents, DateTime.UtcNow);
         await _producer.ProduceAsync(KafkaTopics.OrderCancelled,
             new Message<string, string>
             {

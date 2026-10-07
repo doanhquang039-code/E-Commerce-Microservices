@@ -11,6 +11,7 @@ public class OrderDbContext : DbContext
     public DbSet<OrderItem> OrderItems => Set<OrderItem>();
     public DbSet<Cart> Carts => Set<Cart>();
     public DbSet<CartItem> CartItems => Set<CartItem>();
+    public DbSet<Payment> Payments => Set<Payment>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -37,6 +38,11 @@ public class OrderDbContext : DbContext
         modelBuilder.Entity<CartItem>(entity =>
         {
             entity.Property(e => e.UnitPrice).HasColumnType("decimal(18,2)");
+        });
+
+        modelBuilder.Entity<Payment>(entity =>
+        {
+            entity.Property(e => e.Amount).HasColumnType("decimal(18,2)");
         });
     }
 }

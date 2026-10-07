@@ -7,11 +7,12 @@ public class ReviewDbContext : DbContext
 {
     public ReviewDbContext(DbContextOptions<ReviewDbContext> options) : base(options) { }
 
-    public DbSet<Review> Reviews => Set<Review>();
+    public DbSet<Entities.Review> Reviews => Set<Entities.Review>();
+    public DbSet<PurchaseHistory> PurchaseHistories => Set<PurchaseHistory>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<Review>(entity =>
+        modelBuilder.Entity<Entities.Review>(entity =>
         {
             entity.Property(e => e.Images)
                 .HasConversion(

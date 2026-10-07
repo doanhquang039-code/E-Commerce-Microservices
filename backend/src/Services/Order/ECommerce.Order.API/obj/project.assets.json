@@ -1789,6 +1789,20 @@
             "rid": "win"
           }
         }
+      },
+      "ECommerce.Shared/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "Confluent.Kafka": "2.6.0",
+          "Microsoft.AspNetCore.Authentication.JwtBearer": "9.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ECommerce.Shared.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ECommerce.Shared.dll": {}
+        }
       }
     }
   },
@@ -5064,11 +5078,17 @@
         "system.windows.extensions.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "ECommerce.Shared/1.0.0": {
+      "type": "project",
+      "path": "../../../Shared/ECommerce.Shared/ECommerce.Shared.csproj",
+      "msbuildProject": "../../../Shared/ECommerce.Shared/ECommerce.Shared.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net9.0": [
       "Confluent.Kafka >= 2.6.0",
+      "ECommerce.Shared >= 1.0.0",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 9.0.0",
       "Microsoft.AspNetCore.OpenApi >= 9.0.20",
       "Microsoft.EntityFrameworkCore.SqlServer >= 9.0.0",
@@ -5100,7 +5120,11 @@
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\E-Commerce Microservices\\backend\\src\\Shared\\ECommerce.Shared\\ECommerce.Shared.csproj": {
+              "projectPath": "D:\\E-Commerce Microservices\\backend\\src\\Shared\\ECommerce.Shared\\ECommerce.Shared.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

@@ -15,6 +15,7 @@ public record OrderCancelledEvent(
     Guid UserId,
     string UserEmail,
     string Reason,
+    List<OrderItemEvent> Items,
     DateTime CancelledAt
 );
 

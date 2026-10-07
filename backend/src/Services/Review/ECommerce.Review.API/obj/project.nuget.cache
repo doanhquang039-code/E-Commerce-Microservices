@@ -1,12 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "bNjZ7kxWXC8=",
+  "dgSpecHash": "gJ2zNor7ieI=",
   "success": true,
   "projectFilePath": "D:\\E-Commerce Microservices\\backend\\src\\Services\\Review\\ECommerce.Review.API\\ECommerce.Review.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\admoi\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\admoi\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
+    "C:\\Users\\admoi\\.nuget\\packages\\confluent.kafka\\2.6.0\\confluent.kafka.2.6.0.nupkg.sha512",
     "C:\\Users\\admoi\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
+    "C:\\Users\\admoi\\.nuget\\packages\\librdkafka.redist\\2.6.0\\librdkafka.redist.2.6.0.nupkg.sha512",
     "C:\\Users\\admoi\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\9.0.0\\microsoft.aspnetcore.authentication.jwtbearer.9.0.0.nupkg.sha512",
     "C:\\Users\\admoi\\.nuget\\packages\\microsoft.aspnetcore.openapi\\9.0.20\\microsoft.aspnetcore.openapi.9.0.20.nupkg.sha512",
     "C:\\Users\\admoi\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\7.0.0\\microsoft.bcl.asyncinterfaces.7.0.0.nupkg.sha512",

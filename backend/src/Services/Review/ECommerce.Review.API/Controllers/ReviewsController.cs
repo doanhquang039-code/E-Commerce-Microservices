@@ -34,10 +34,13 @@ public class ReviewsController : ControllerBase
         var existing = await _db.Reviews.AnyAsync(r => r.ProductId == dto.ProductId && r.UserId == userId);
         if (existing) return BadRequest(new { success = false, message = "You have already reviewed this product" });
 
+        var hasPurchased = await _db.PurchaseHistories.AnyAsync(p => p.UserId == userId && p.ProductId == dto.ProductId);
+
         var review = new Entities.Review
         {
             ProductId = dto.ProductId, UserId = userId, UserName = userName,
-            Rating = Math.Clamp(dto.Rating, 1, 5), Title = dto.Title, Content = dto.Content
+            Rating = Math.Clamp(dto.Rating, 1, 5), Title = dto.Title, Content = dto.Content,
+            IsVerifiedPurchase = hasPurchased
         };
         _db.Reviews.Add(review);
         await _db.SaveChangesAsync();
