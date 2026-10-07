@@ -74,6 +74,17 @@ using (var scope = app.Services.CreateScope())
 {
     var db = scope.ServiceProvider.GetRequiredService<ProductDbContext>();
     await db.Database.MigrateAsync();
+    
+    // Seed Data
+    try
+    {
+        await ProductSeeder.SeedAsync(db);
+    }
+    catch (Exception ex)
+    {
+        var logger = scope.ServiceProvider.GetRequiredService<ILogger<Program>>();
+        logger.LogError(ex, "An error occurred while seeding the Product database.");
+    }
 }
 
 if (app.Environment.IsDevelopment())
